@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simple TO-DO List</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>
+          TO DO List
+          <img src="images/icon.png" alt="" />
+        </h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add your goals here" />
+          <span class="update-btn">Edit</span>
+          <button onclick="addTask()">ADD</button>
+        </div>
+        <ul id="list-container">
+          <!-- Tasks will be dynamically added here -->
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
