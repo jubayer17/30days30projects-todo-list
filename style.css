@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Poppins", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -28,11 +28,21 @@ body {
 }
 
 .todo-app h2 {
-  color: #002765;
+  color: #4a00e0;
   display: flex;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-family: "Poppins", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   margin-bottom: 25px;
+  background: linear-gradient(90deg, #4a00e0, #8e2de2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+  border-bottom: 2px solid #8e2de2;
 }
 
 .todo-app h2 img {
@@ -150,7 +160,7 @@ ul li.checked::before {
   background: #03c116;
   color: #fff;
   border: none;
-  padding: 14px 36px; /* Same height and width as the add button */
+  padding: 14px 36px;
   border-radius: 999px;
   cursor: pointer;
   font-weight: bold;
@@ -168,7 +178,7 @@ ul li.checked::before {
   justify-content: center;
 
   color: #fff;
-  padding: 14px 36px; /* Same height and width as the add button */
+  padding: 14px 36px;
   border-radius: 999px;
   cursor: pointer;
   font-weight: bold;
@@ -179,4 +189,9 @@ ul li.checked::before {
 .editing {
   background: rgba(0, 123, 255, 0.1);
   border-left: 4px solid #007bff;
+}
+
+#add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
