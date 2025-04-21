@@ -3,8 +3,9 @@ const listContainer = document.getElementById("list-container");
 let currentEdit = null;
 
 function addTask() {
-  const task = inputBox.value.trim();
+  if (document.querySelector(".update-btn").style.display === "inline") return;
 
+  const task = inputBox.value.trim();
   if (task === "") {
     alert("You must write something");
     return;
@@ -50,6 +51,7 @@ listContainer.addEventListener(
       currentEdit = e.target.parentElement;
       inputBox.value = currentEdit.firstChild.textContent.trim();
       currentEdit.classList.add("editing");
+      document.getElementById("add-btn").disabled = true;
       document.querySelector(".update-btn").style.display = "inline";
     }
   },
@@ -58,11 +60,12 @@ listContainer.addEventListener(
 
 document.querySelector(".update-btn").addEventListener("click", () => {
   if (currentEdit) {
-    currentEdit.firstChild.textContent = inputBox.value.trim(); // Update the task text
-    currentEdit.classList.remove("editing"); // Remove editing class
-    currentEdit = null; // Reset edit state
-    document.querySelector(".update-btn").style.display = "none"; // Hide "Edit" button
-    inputBox.value = ""; // Clear the input box
+    currentEdit.firstChild.textContent = inputBox.value.trim();
+    currentEdit.classList.remove("editing");
+    currentEdit = null;
+    document.querySelector(".update-btn").style.display = "none";
+    document.getElementById("add-btn").disabled = false;
+    inputBox.value = "";
     saveData();
   }
 });
